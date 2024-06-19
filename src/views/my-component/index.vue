@@ -1,3 +1,4 @@
+<!-- 组件传参 -->
 <template>
   <div class="my-component">
     <div>父组件：</div>

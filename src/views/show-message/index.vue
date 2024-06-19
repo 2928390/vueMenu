@@ -1,3 +1,4 @@
+<!-- 公共弹窗组件 -->
 <template>
   <div class="testMessage">
     <button @click="clickHandler">打开弹窗</button>
@@ -9,7 +10,7 @@ import { showMsg } from './showMsg';
 
 const clickHandler = () => {
   // 执行 close 关闭弹窗
-  const close = showMsg('显示消息', () => {
+  const close = showMsg('两秒后消失', () => {
     close();
   });
 

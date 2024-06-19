@@ -33,6 +33,8 @@ const emit = defineProps(['msg', 'onClick']);
     box-shadow:
       20px 20px 60px #bebebe,
       -20px -20px 60px #ffffff;
+    text-align: center;
+    padding: 10px;
   }
 }
 </style>

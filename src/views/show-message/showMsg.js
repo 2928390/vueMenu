@@ -9,8 +9,11 @@ export function showMsg(msg, handlerClick) {
     msg,
     onClick: handlerClick
   });
+
   const div = document.createElement('div');
   document.body.appendChild(div);
+
+  // 将这个实例挂载到新创建的 div 元素上
   app.mount(div);
 
   // 返回 关闭窗口的函数

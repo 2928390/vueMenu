@@ -31,6 +31,12 @@ export const routerList = [
     name: '组件间传参',
     component: () => import('../views/my-component/index.vue'),
     meta: {}
+  },
+  {
+    path: '/grid-layout',
+    name: '网格布局',
+    component: () => import('../views/grid-layout/index.vue'),
+    meta: {}
   }
 ];
 
@@ -40,6 +46,8 @@ const router = createRouter({
     {
       path: '/',
       name: '',
+      // 重定向，即默认页面
+      redirect: '/random-tree',
       component: Layout,
       meta: {
         name: 'Layout'
