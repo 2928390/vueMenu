@@ -37,6 +37,18 @@ export const routerList = [
     name: '网格布局',
     component: () => import('../views/grid-layout/index.vue'),
     meta: {}
+  },
+  {
+    path: '/card-3d',
+    name: '3D卡片',
+    component: () => import('../views/card-3d/index.vue'),
+    meta: {}
+  },
+  {
+    path: '/parallax-scrolling',
+    name: '视差滚动',
+    component: () => import('../views/parallax-scrolling/index.vue'),
+    meta: {}
   }
 ];
 
@@ -47,7 +59,7 @@ const router = createRouter({
       path: '/',
       name: '',
       // 重定向，即默认页面
-      redirect: '/random-tree',
+      redirect: '/parallax-scrolling',
       component: Layout,
       meta: {
         name: 'Layout'

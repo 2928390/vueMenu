@@ -1,30 +1,37 @@
 <template>
   <div class="layout">
-    <div class="meun hide-scrollbar">
+    <div :class="{ meun: true, 'hide-scrollbar': true, showMenu: showMenu }">
       <div v-for="item in routerList" :key="item.path" class="menuItem">
         <router-link :to="item.path" class="menuLink">{{ item.name }}</router-link>
       </div>
     </div>
     <div class="content">
       <router-view></router-view>
+      <div class="menuSwitch">
+        <img src="@/assets/迈克尔杰克驴.png" @click="showMenu = !showMenu" alt="" />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { routerList } from '../router/index';
+import { ref } from 'vue';
+
+// true 隐藏
+const showMenu = ref(true);
 </script>
 
 <style lang="scss">
 .layout {
   display: flex;
-  // background-color: #165dff;
 
   .meun {
     width: 190px;
     min-height: 100vh;
     overflow: auto;
-    // background-color: rgb(189, 233, 255);
+    transition: all 0.5s;
+
     .menuItem {
       .menuLink {
         padding: 0 12px;
@@ -46,6 +53,21 @@ import { routerList } from '../router/index';
     width: 100%;
     min-height: 100vh;
     background-color: #f2f3f5;
+
+    .menuSwitch {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 100%;
+
+      img {
+        position: sticky;
+        top: 30vh;
+        width: 100%;
+        cursor: pointer;
+      }
+    }
   }
 
   .router-link-active {
@@ -65,5 +87,10 @@ import { routerList } from '../router/index';
     scrollbar-width: none; /* Firefox */
     overflow: auto;
   }
+}
+
+.showMenu {
+  transform: translateX(-100%);
+  width: 0 !important;
 }
 </style>

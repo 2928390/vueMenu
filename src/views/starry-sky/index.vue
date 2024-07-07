@@ -16,24 +16,28 @@
   background-color: #000;
 }
 
+// x 偏移量 | y 偏移量 | 阴影颜色
+// box-shadow: 60px -16px teal;
 @function getShadows($n) {
+  // #{} 相当于模板字符串中的 ${}
+  // random() 生成 0-1 随机数，传入 100 生成 0-100 随机整数
   $shadows: '#{random(100)}vw #{random(100)}vh #fff';
 
+  // from 2：循环的初始值，即 $i 从 2 开始。
+  // through $n：指定循环结束的条件
+  // @for $i from 1 through 3 会循环生成 1、2、3
   @for $i from 2 through $n {
     $shadows: '#{$shadows}, #{random(100)}vw #{random(100)}vh #fff';
   }
 
+  // '#{random(100)}px' => "50px"
+  // unquote() 去掉双引号
+  // unquote('#{random(100)}px') => 50px
   @return unquote($shadows);
 }
 
-// random() 生成 0-1 随机数
-// 传入 100 生成 0-100 随机整数
-
-// '#{random(100)}px' => "50px"
-// unquote() 去掉双引号
-// unquote('#{random(100)}px') => 50px
 $duration: 400s;
-$conut: 1000;
+$count: 1000;
 
 @for $i from 1 through 5 {
   // duration 每循环一次 时间减半(允许对带单位的数值进行运算)
@@ -42,8 +46,8 @@ $conut: 1000;
   // $duration: $duration / 2;
   $duration: calc($duration / 2);
 
-  // $conut: floor($conut / 2);
-  $conut: floor(calc($conut / 2));
+  // $count: floor($count / 2);
+  $count: floor(calc($count / 2));
   .layer#{$i} {
     $size: #{$i}px;
     position: fixed;
@@ -52,7 +56,7 @@ $conut: 1000;
     border-radius: 50%;
     left: 0;
     top: 0;
-    box-shadow: getShadows($conut);
+    box-shadow: getShadows($count);
     animation: moveup $duration linear infinite;
     &::after {
       content: '';

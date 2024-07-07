@@ -1,21 +1,31 @@
 <template>
   <div class="wrapper">
-    <div class="item" v-for="(item, index) of list" :key="index">{{ index }}</div>
+    <!-- class: {} 中 value 为 true 时，添加 key 为类名 -->
+    <div
+      v-for="n of 15"
+      :key="n"
+      :class="{ item: true, action: curIndex == n }"
+      @click="curIndex = n"
+    ></div>
   </div>
 </template>
 
 <script setup>
-const list = new Array(15).fill(0);
+import { ref } from 'vue';
+
+let curIndex = ref(1);
 </script>
 
 <style lang="scss">
+$itemSize: 180px;
+
 .wrapper {
   display: grid;
   grid-gap: 20px 40px;
-  // 确保每一行的高度为 100px，这样所有的行高都将保持一致
-  grid-auto-rows: 100px;
-  // 确保每一列的宽度为 200px，自适应列数
-  grid-template-columns: repeat(auto-fit, 200px);
+  // 确保每一行的高度，这样所有的行高都将保持一致
+  grid-auto-rows: $itemSize;
+  // 确保每一列的宽度，自适应列数
+  grid-template-columns: repeat(auto-fit, $itemSize);
   justify-content: space-between;
   width: 80%;
   min-height: 80%;
@@ -33,7 +43,34 @@ const list = new Array(15).fill(0);
   box-shadow:
     20px 20px 60px #bebebe,
     -20px -20px 60px #ffffff;
-  text-align: center;
   border-radius: 5px;
+  // bg-------------------------------------------
+  // div 宽高为 $itemSize
+  background-image: url('@/assets/jingling-1.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% auto;
+  // 可以通过 scale 来控制大小，width 只能为 180px (图片的宽度)
+  scale: (0.5);
+
+  &:hover {
+    // 图片尺寸：180 * 5880
+    // 共 31 帧，31 * 180 = 5880
+    // steps(30)表示将动画分成 30 步
+    // 1 表示动画只播放一次，不会循环
+    // forwards 确保动画结束时保持在最后一帧
+    animation: play 1s steps(30) 1 forwards;
+  }
+}
+
+@keyframes play {
+  to {
+    // 5880 - 180 = 5700
+    background-position-y: -5700px;
+  }
+}
+
+.action {
+  background-color: rgb(198, 223, 255);
 }
 </style>
