@@ -49,6 +49,18 @@ export const routerList = [
     name: '视差滚动',
     component: () => import('../views/parallax-scrolling/index.vue'),
     meta: {}
+  },
+  {
+    path: '/tab',
+    name: 'tab 切换',
+    component: () => import('../views/tab/index.vue'),
+    meta: {}
+  },
+  {
+    path: '/text-image',
+    name: '文字图片',
+    component: () => import('../views/text-image/index.vue'),
+    meta: {}
   }
 ];
 

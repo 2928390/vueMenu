@@ -5,7 +5,7 @@
         <router-link :to="item.path" class="menuLink">{{ item.name }}</router-link>
       </div>
     </div>
-    <div class="content">
+    <div class="layoutContent">
       <router-view></router-view>
       <div class="menuSwitch">
         <img src="@/assets/迈克尔杰克驴.png" @click="showMenu = !showMenu" alt="" />
@@ -49,21 +49,22 @@ const showMenu = ref(true);
     }
   }
 
-  .content {
+  .layoutContent {
     width: 100%;
     min-height: 100vh;
     background-color: #f2f3f5;
+    overflow: auto;
 
     .menuSwitch {
-      position: absolute;
-      top: 0;
+      position: fixed;
+      top: 30vh;
       right: 0;
       width: 50px;
       height: 100%;
 
       img {
-        position: sticky;
-        top: 30vh;
+        // position: sticky;
+        // top: 30vh;
         width: 100%;
         cursor: pointer;
       }

@@ -145,7 +145,7 @@ onMounted(() => {
       background-image: url('../../assets/1080-1.jpg');
 
       p {
-        font-size: 24px;
+        font-size: 36px;
         font-weight: 500;
         color: transparent;
 
