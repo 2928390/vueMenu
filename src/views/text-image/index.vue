@@ -33,6 +33,7 @@ onMounted(() => {
     raduis: 10,
     source: {
       // 注意这里的路径 只能这样写 @ 或者 ./
+      // img: 'src/assets/蜡笔小新.gif',
       img: 'src/assets/迈克尔杰克驴.png',
       width: 600,
       height: 600

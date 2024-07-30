@@ -61,6 +61,12 @@ export const routerList = [
     name: '文字图片',
     component: () => import('../views/text-image/index.vue'),
     meta: {}
+  },
+  {
+    path: '/box-3d',
+    name: '3d盒子',
+    component: () => import('../views/box-3d/index.vue'),
+    meta: {}
   }
 ];
 
