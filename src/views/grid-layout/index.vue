@@ -2,7 +2,7 @@
   <div class="wrapper">
     <!-- class: {} 中 value 为 true 时，添加 key 为类名 -->
     <div
-      v-for="n of 15"
+      v-for="n of 14"
       :key="n"
       :class="{ item: true, action: curIndex == n }"
       @click="curIndex = n"
@@ -21,8 +21,9 @@ $itemSize: 180px;
 
 .wrapper {
   display: grid;
+  // 第一个值20px指定了行间的垂直间距，第二个值40px指定了列间的水平间距
   grid-gap: 20px 40px;
-  // 确保每一行的高度，这样所有的行高都将保持一致
+  // 每一行的高度
   grid-auto-rows: $itemSize;
   // 确保每一列的宽度，自适应列数
   grid-template-columns: repeat(auto-fit, $itemSize);

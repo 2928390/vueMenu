@@ -67,6 +67,12 @@ export const routerList = [
     name: '3d盒子',
     component: () => import('../views/box-3d/index.vue'),
     meta: {}
+  },
+  {
+    path: '/mouse-movement',
+    name: '鼠标移动',
+    component: () => import('../views/mouse-movement/index.vue'),
+    meta: {}
   }
 ];
 
