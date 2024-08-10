@@ -16,7 +16,7 @@ import { ref } from 'vue';
 let curIndex = ref(1);
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $itemSize: 180px;
 
 .wrapper {

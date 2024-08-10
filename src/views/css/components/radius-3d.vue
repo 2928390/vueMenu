@@ -12,7 +12,7 @@ perspective-origin: x-axis y-axis;
 // y-axis : 定义该视图在 y 轴上的位置。默认值：50%
 -->
 <template>
-  <div class="content">
+  <div class="radiusContent">
     <div class="cube">
       <div class="top">X</div>
       <div class="side front"></div>
@@ -26,7 +26,7 @@ perspective-origin: x-axis y-axis;
 <script setup></script>
 
 <style lang="scss" scoped>
-.content {
+.radiusContent {
   min-height: 100vh;
   background-color: #000;
   display: flex;

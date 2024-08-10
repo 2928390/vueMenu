@@ -2,7 +2,7 @@
   <div class="layout">
     <div :class="{ meun: true, 'hide-scrollbar': true, showMenu: showMenu }">
       <div v-for="item in routerList" :key="item.path" class="menuItem">
-        <router-link :to="item.path" class="menuLink">{{ item.name }}</router-link>
+        <router-link :to="item.path" class="menuLink">{{ item.meta.title }}</router-link>
       </div>
     </div>
     <div class="layoutContent">

@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     host: '0.0.0.0', // 监听所有IP地址
-    port: 5173 // 你可以自定义端口号
+    port: 9999 // 你可以自定义端口号
   },
   resolve: {
     alias: {
